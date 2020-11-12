@@ -51,6 +51,7 @@ public class Persona<T> {
     }
     
     
+    
 
     public T getCedula() {
         return cedula;
