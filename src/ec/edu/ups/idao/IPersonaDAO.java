@@ -16,6 +16,7 @@ public interface IPersonaDAO {
     public boolean create(Persona persona);
     public Persona read(String cedula);
     public void update(Persona persona);
+    public Persona iniciarSesion(String correo, String contrasenia);
     public void delete(Persona persona);   
     public List<Persona> findAll(); 
 }

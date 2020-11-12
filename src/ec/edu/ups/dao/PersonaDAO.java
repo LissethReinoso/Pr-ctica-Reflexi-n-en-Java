@@ -7,6 +7,7 @@ package ec.edu.ups.dao;
 
 import ec.edu.ups.idao.IPersonaDAO;
 import ec.edu.ups.modelo.Persona;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -70,5 +71,17 @@ public class PersonaDAO implements IPersonaDAO {
     @Override
     public List<Persona> findAll() {
         return listaPersona;
+    }
+
+    @Override
+    public Persona iniciarSesion(String correo, String contrasenia) {
+        
+        for (Persona persona : listaPersona) {
+            if (persona.getCorreoElectronico().equals(correo) && persona.getContrasenia().equals(contrasenia)) {
+                return persona;
+            }
+        }
+            
+        return null;
     }
 }

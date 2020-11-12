@@ -57,6 +57,15 @@ public class ControladorPersona {
         personaDAO.create(persona);
     }
 
+     public boolean  iniciarSesion(String correo, String contrasenia){
+         
+         persona=personaDAO.iniciarSesion(correo, contrasenia);
+        if(persona!=null){
+            return true;
+        }else{
+            return false;
+        }
+     }
     //llama al DAO para obtener una persona por la cedula y luego los muestra en la vista
     public void verPersona() {
         String cedula = vistaPersona.buscarPersona();
@@ -81,6 +90,12 @@ public class ControladorPersona {
         List<Persona> personas;
         personas = personaDAO.findAll();
         vistaPersona.verPersonas(personas);
+        
+    }
+    
+    public List<Telefono> listarT(String cedula) {
+
+        return null;
     }
     
     // agregacion

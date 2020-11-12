@@ -21,6 +21,9 @@ public class Persona<T> {
     private T cedula;
     private T nombre;
     private T apellido;
+    private T correoElectronico;
+    private T contrasenia;
+    
     private Telefono telf;
     //Agregacion
     private List<Telefono> telefonos;
@@ -38,6 +41,16 @@ public class Persona<T> {
         telefonos = new ArrayList<>();
 
     }
+
+    public Persona(T cedula, T nombre, T apellido, T correoElectronico, T contrasenia) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correoElectronico = correoElectronico;
+        this.contrasenia = contrasenia;
+    }
+    
+    
 
     public T getCedula() {
         return cedula;
@@ -62,6 +75,24 @@ public class Persona<T> {
     public void setApellido(T apellido) {
         this.apellido = apellido;
     }
+
+    public T getCorreoElectronico() {
+        return correoElectronico;
+    }
+
+    public void setCorreoElectronico(T correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+    public T getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(T contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+    
+    
 
     //métodos de la agregación
     public boolean agregarTelefono(Telefono telefono) {
@@ -110,10 +141,16 @@ public class Persona<T> {
         }
         return -1;
     }
-
+        
+    
+    
+    
     @Override
     public String toString() {
-        return "Persona{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + "\nTeléfonos:" + telefonos + '}';
+        return "Persona{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correoElectronico=" + correoElectronico + ", contrasenia=" + contrasenia + ", telefonos=" + telefonos + '}';
     }
+    
+    
 
+    
 }
