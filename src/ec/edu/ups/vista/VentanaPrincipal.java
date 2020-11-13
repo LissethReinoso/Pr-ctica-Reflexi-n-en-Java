@@ -29,7 +29,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private VentanaEliminarPersona ventanaEliminarPersona;
     
     private VentanaListado ventanaTelf;
-    
+    private ListarTelefonoPorUsuarioVentana lt;
     
     PersonaDAO personaDAO = new PersonaDAO();
     TelefonoDAO telefonoDAO = new TelefonoDAO();
@@ -45,8 +45,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ventanaActualizarPersona = new VentanaActualizarPersona(controladorPersona);
 
         ventanaEliminarPersona = new VentanaEliminarPersona();
+        
         ventanaTelf=new VentanaListado();
-       
+       lt=new ListarTelefonoPorUsuarioVentana();
     }
 
     /**
@@ -204,6 +205,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
         // TODO add your handling code here:
+        
+         desktopPane.add(lt);
+        lt.setVisible(true);
         
         
     }//GEN-LAST:event_contentMenuItemActionPerformed

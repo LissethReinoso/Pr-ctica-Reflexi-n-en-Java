@@ -50,9 +50,6 @@ public class Persona<T> {
         this.contrasenia = contrasenia;
     }
     
-    
-    
-
     public T getCedula() {
         return cedula;
     }
@@ -92,14 +89,11 @@ public class Persona<T> {
     public void setContrasenia(T contrasenia) {
         this.contrasenia = contrasenia;
     }
-    
-    
 
     //métodos de la agregación
     public boolean agregarTelefono(Telefono telefono) {
         return this.telefonos.add(new Telefono(telefono.getNumero(), telefono.getTipo(), telefono.getOperadora()));
     }
-
     
     public boolean actualizarTelefono( String numero,String tipo, String operadora) {
 
