@@ -168,7 +168,14 @@ public class VentanIniciarSeción extends javax.swing.JInternalFrame {
         }else if (correotxt.getText().equals(p.getCorreoElectronico()) || contraseniatxt.getText().equals(p.getContrasenia())){
             p=controladorPersona.iniciarSesion(nombre, contrasenia);
             JOptionPane.showMessageDialog(null, "Se ha iniciado sesión");
+            
+        }else{
+             JOptionPane.showMessageDialog(null, "Usuario no encontrado", "Error", 0);
         }
+        
+        correotxt.setText("");
+        contraseniatxt.setText("");
+        
         
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
