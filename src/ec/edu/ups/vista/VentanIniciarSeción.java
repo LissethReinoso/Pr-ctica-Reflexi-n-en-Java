@@ -5,6 +5,13 @@
  */
 package ec.edu.ups.vista;
 
+import ec.edu.ups.controlador.ControladorPersona;
+import ec.edu.ups.controlador.ControladorTelefono;
+import ec.edu.ups.dao.PersonaDAO;
+import ec.edu.ups.dao.TelefonoDAO;
+import ec.edu.ups.modelo.Persona;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -14,6 +21,18 @@ public class VentanIniciarSeción extends javax.swing.JInternalFrame {
     /**
      * Creates new form VentanIniciarSeción
      */
+    
+    Persona p;
+    PersonaDAO personaDAO = new PersonaDAO();
+    TelefonoDAO telefonoDAO = new TelefonoDAO();
+    ControladorPersona controladorPersona = new ControladorPersona();
+    ControladorTelefono controladorTelefono = new ControladorTelefono();
+    String cedula="";
+    String nombre="";
+    String apellido="";
+    String correoElectronico="";
+    String contrasenia="";
+    
     public VentanIniciarSeción() {
         initComponents();
     }
@@ -47,8 +66,25 @@ public class VentanIniciarSeción extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Contraseña:");
 
+        correotxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                correotxtActionPerformed(evt);
+            }
+        });
+
+        contraseniatxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraseniatxtActionPerformed(evt);
+            }
+        });
+
         btnIniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesión");
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarSesionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,6 +146,31 @@ public class VentanIniciarSeción extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void correotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correotxtActionPerformed
+        // TODO add your handling code here:
+        
+       correotxt.setText(correoElectronico);
+        
+    }//GEN-LAST:event_correotxtActionPerformed
+
+    private void contraseniatxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseniatxtActionPerformed
+        // TODO add your handling code here:
+        contraseniatxt.setText(contrasenia);
+        
+    }//GEN-LAST:event_contraseniatxtActionPerformed
+
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+        // TODO add your handling code here:
+        
+        if( correotxt.getText().equals("") || contraseniatxt.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Rellene todas las casillas", "Error", 0);
+        }else if (correotxt.getText().equals(p.getCorreoElectronico()) || contraseniatxt.getText().equals(p.getContrasenia())){
+            p=controladorPersona.iniciarSesion(nombre, contrasenia);
+            JOptionPane.showMessageDialog(null, "Se ha iniciado sesión");
+        }
+        
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

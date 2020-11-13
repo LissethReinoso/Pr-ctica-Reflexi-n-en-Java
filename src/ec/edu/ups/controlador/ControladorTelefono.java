@@ -48,12 +48,7 @@ public class ControladorTelefono {
         telefonoDAO.create(telefono);
     }
 
-    //llama al DAO para obtener un telefono por el numero y luego los muestra en la vista
-    public void verTelefono() {
-        String numero = vistaTelefono.buscarTelefono();
-        telefono = telefonoDAO.read(numero);
-        vistaTelefono.verTelefono(telefono);
-    }
+   
     
     //llama al DAO para actualizar un telefono
     public void actualizar() {
@@ -72,5 +67,12 @@ public class ControladorTelefono {
         List<Telefono> telefonos;
         telefonos = telefonoDAO.findAll();
         vistaTelefono.verTelefonos(telefonos);
-    } 
+    }
+    
+     //llama al DAO para obtener un telefono por el numero y luego los muestra en la vista
+    public void verTelefono() {
+        String numero = vistaTelefono.buscarTelefono();
+        telefono = telefonoDAO.read(numero);
+        vistaTelefono.verTelefono(telefono);
+    }
 }

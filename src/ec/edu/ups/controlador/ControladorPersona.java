@@ -57,14 +57,11 @@ public class ControladorPersona {
         personaDAO.create(persona);
     }
 
-     public boolean  iniciarSesion(String correo, String contrasenia){
+     public Persona iniciarSesion(String correo, String contrasenia){
          
          persona=personaDAO.iniciarSesion(correo, contrasenia);
-        if(persona!=null){
-            return true;
-        }else{
-            return false;
-        }
+        return persona;
+        
      }
     //llama al DAO para obtener una persona por la cedula y luego los muestra en la vista
     public void verPersona() {
