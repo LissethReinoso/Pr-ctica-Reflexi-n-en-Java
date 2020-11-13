@@ -29,7 +29,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private VentanaEliminarPersona ventanaEliminarPersona;
     
     private VentanaListado ventanaTelf;
-    private ListadoGeneral listadog;
+    
     
     PersonaDAO personaDAO = new PersonaDAO();
     TelefonoDAO telefonoDAO = new TelefonoDAO();
@@ -46,7 +46,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         ventanaEliminarPersona = new VentanaEliminarPersona();
         ventanaTelf=new VentanaListado();
-        listadog=new ListadoGeneral();
+       
     }
 
     /**
@@ -133,10 +133,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuBar.add(editMenu);
 
         helpMenu.setMnemonic('h');
-        helpMenu.setText("Listar");
+        helpMenu.setText("Buscar");
 
         contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Personas");
+        contentMenuItem.setText("Telefonos");
         contentMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contentMenuItemActionPerformed(evt);
@@ -204,8 +204,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
         // TODO add your handling code here:
-        desktopPane.add(listadog);
-        listadog.setVisible(true);
         
         
     }//GEN-LAST:event_contentMenuItemActionPerformed

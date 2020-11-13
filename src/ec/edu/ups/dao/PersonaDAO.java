@@ -70,6 +70,7 @@ public class PersonaDAO implements IPersonaDAO {
 
     @Override
     public List<Persona> findAll() {
+       
         return listaPersona;
     }
 

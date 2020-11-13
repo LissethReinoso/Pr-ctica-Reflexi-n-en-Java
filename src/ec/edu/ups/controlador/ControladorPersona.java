@@ -91,7 +91,7 @@ public class ControladorPersona {
     }
     
     public List<Telefono> listarT(String cedula) {
-
+            persona.listar();
         return null;
     }
     
