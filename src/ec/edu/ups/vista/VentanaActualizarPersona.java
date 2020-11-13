@@ -29,7 +29,8 @@ public class VentanaActualizarPersona extends javax.swing.JInternalFrame {
     String nuevaCedula = "";
     String nuevoNombre = "";
     String nuevoApellido = "";
-    
+    String nuevoCorreo="";
+    String nuevacontraseña="";
    
 
     public VentanaActualizarPersona(ControladorPersona controladorPersona) {
@@ -59,6 +60,10 @@ public class VentanaActualizarPersona extends javax.swing.JInternalFrame {
         nuevoNombretxt = new javax.swing.JTextField();
         nuevoApellidotxt = new javax.swing.JTextField();
         ingresarbtn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        nuevocorreotxt = new javax.swing.JTextField();
+        nuevaContraseñatxt = new javax.swing.JTextField();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 255, 0)));
 
@@ -111,6 +116,27 @@ public class VentanaActualizarPersona extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel5.setText("Correo Electrónico:");
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel6.setText("Contraseña:");
+
+        nuevocorreotxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuevocorreotxtActionPerformed(evt);
+            }
+        });
+
+        nuevaContraseñatxt.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        nuevaContraseñatxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuevaContraseñatxtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -131,6 +157,18 @@ public class VentanaActualizarPersona extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(27, 27, 27)
+                                        .addComponent(jLabel6)))
+                                .addGap(66, 66, 66)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(nuevaContraseñatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(nuevocorreotxt)
+                                        .addGap(2, 2, 2))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel3))
                                 .addGap(89, 89, 89)
@@ -141,7 +179,7 @@ public class VentanaActualizarPersona extends javax.swing.JInternalFrame {
                                 .addComponent(nuevaCedulatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(88, 88, 88)
                                 .addComponent(ingresarbtn)))))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,15 +192,23 @@ public class VentanaActualizarPersona extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nuevaCedulatxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ingresarbtn))
-                .addGap(64, 64, 64)
+                .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(nuevoNombretxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(nuevoApellidotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nuevocorreotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nuevaContraseñatxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(actualizarPersonabtn)
                 .addGap(32, 32, 32))
         );
@@ -220,17 +266,18 @@ public class VentanaActualizarPersona extends javax.swing.JInternalFrame {
 
     private void actualizarPersonabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarPersonabtnActionPerformed
         // TODO add your handling code here:
-        if (nuevaCedulatxt.getText().equals("") || nuevoNombretxt.getText().equals("") || nuevoApellidotxt.getText().equals("")) {
+        if (nuevaCedulatxt.getText().equals("") || nuevoNombretxt.getText().equals("") || nuevoApellidotxt.getText().equals("")||nuevocorreotxt.getText().equals("")||nuevaContraseñatxt.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Rellene todas las casillas", "Error", 0);
         } else {
             String nuevaCedula = nuevaCedulatxt.getText();
             String nuevoNombre = nuevoNombretxt.getText();
             String nuevoApellido = nuevoApellidotxt.getText();
-
-            p = new Persona(nuevaCedula, nuevoNombre, nuevoApellido);
+            String nuevoCorreo = nuevocorreotxt.getText();
+            String nuevacontraseña = nuevaContraseñatxt.getText();
+            p = new Persona(nuevaCedula, nuevoNombre, nuevoApellido,nuevoCorreo,nuevacontraseña);
             personaDAO.update(p);
         }
-        if (nuevaCedulatxt.getText().equals(nuevaCedula) || nuevoNombretxt.getText().equals(nuevoNombre) || nuevoApellidotxt.getText().equals(nuevoApellido)) {
+        if (nuevaCedulatxt.getText().equals(nuevaCedula) || nuevoNombretxt.getText().equals(nuevoNombre) || nuevoApellidotxt.getText().equals(nuevoApellido)||nuevocorreotxt.getText().equals(nuevoCorreo)||nuevaContraseñatxt.getText().equals(nuevacontraseña)) {
 
             JOptionPane.showMessageDialog(null, "Usuario actualizado con éxito");
         }
@@ -255,12 +302,25 @@ public class VentanaActualizarPersona extends javax.swing.JInternalFrame {
                 
     }//GEN-LAST:event_ingresarbtnActionPerformed
 
+    private void nuevocorreotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevocorreotxtActionPerformed
+        // TODO add your handling code here:
+         nuevocorreotxt.setText(nuevoCorreo);
+        
+    }//GEN-LAST:event_nuevocorreotxtActionPerformed
+
+    private void nuevaContraseñatxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevaContraseñatxtActionPerformed
+        // TODO add your handling code here:
+        
+         nuevaContraseñatxt.setText(nuevacontraseña);
+    }//GEN-LAST:event_nuevaContraseñatxtActionPerformed
+
     public void reiniciar() {
 
         nuevaCedulatxt.setText("");
         nuevoNombretxt.setText("");
         nuevoApellidotxt.setText("");
-
+        nuevocorreotxt.setText("");
+        nuevaContraseñatxt.setText("");
     }
     
     public void mostrar(){
@@ -277,9 +337,13 @@ public class VentanaActualizarPersona extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nuevaCedulatxt;
+    private javax.swing.JTextField nuevaContraseñatxt;
     private javax.swing.JTextField nuevoApellidotxt;
     private javax.swing.JTextField nuevoNombretxt;
+    private javax.swing.JTextField nuevocorreotxt;
     // End of variables declaration//GEN-END:variables
 }
